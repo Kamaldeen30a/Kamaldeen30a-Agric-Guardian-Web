@@ -93,18 +93,6 @@ export const FinalCTA = () => {
                         </a>
                       </Button>
               </motion.div>
-              <motion.div
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                      <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
-                        <a href="#technology">Talk to Sales</a>
-                      </Button>
-              </motion.div>
             </motion.div>
           </ScrollReveal>
           

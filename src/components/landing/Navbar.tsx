@@ -60,7 +60,7 @@ export const Navbar = () => {
               <a href="#features">Explore</a>
             </Button>
             <Button variant="navPrimary" size="default" asChild>
-              <a href="#final-cta">Get Started</a>
+              <a href="#cassava-detection">Get Started</a>
             </Button>
           </div>
 
