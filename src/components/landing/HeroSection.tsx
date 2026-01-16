@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
@@ -104,18 +103,18 @@ export const HeroSection = () => {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4"
             >
-              <Link to="/signup" className="w-full sm:w-auto">
-                <Button variant="hero" size="xl" className="group w-full sm:w-auto">
+              <Button variant="hero" size="xl" className="group w-full sm:w-auto" asChild>
+                <a href="#final-cta">
                   Create Free Account
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
-              <Link to="/login" className="w-full sm:w-auto">
-                <Button variant="heroOutline" size="xl" className="group w-full sm:w-auto">
+                </a>
+              </Button>
+              <Button variant="heroOutline" size="xl" className="group w-full sm:w-auto" asChild>
+                <a href="#features">
                   <Play className="w-5 h-5" />
-                  Login to Dashboard
-                </Button>
-              </Link>
+                  Explore the Platform
+                </a>
+              </Button>
             </motion.div>
             
             {/* Trust indicators */}

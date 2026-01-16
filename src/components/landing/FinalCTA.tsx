@@ -1,8 +1,7 @@
-import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, LogIn } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { ScrollReveal } from "@/components/animations";
 
 export const FinalCTA = () => {
@@ -87,16 +86,12 @@ export const FinalCTA = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Link to="/signup">
-                  <Button 
-                    variant="hero" 
-                    size="xl" 
-                    className="group bg-emerald-500 hover:bg-emerald-400 shadow-emerald"
-                  >
-                    Start Free
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </Link>
+                      <Button size="lg" className="w-full sm:w-auto" asChild>
+                        <a href="#features">
+                          Get Started
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </a>
+                      </Button>
               </motion.div>
               <motion.div
                 variants={{
@@ -106,16 +101,9 @@ export const FinalCTA = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Link to="/login">
-                  <Button 
-                    variant="heroOutline" 
-                    size="xl" 
-                    className="border-slate-500 text-white hover:bg-white/10 hover:border-white/50"
-                  >
-                    <LogIn className="w-5 h-5" />
-                    Login to Command Center
-                  </Button>
-                </Link>
+                      <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
+                        <a href="#technology">Talk to Sales</a>
+                      </Button>
               </motion.div>
             </motion.div>
           </ScrollReveal>

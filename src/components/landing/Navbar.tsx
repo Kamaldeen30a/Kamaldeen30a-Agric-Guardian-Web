@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Leaf } from "lucide-react";
-import { useAuth } from "@/contexts/AuthContext";
 
 const navLinks = [
   { label: "Features", href: "#features" },
@@ -14,7 +12,6 @@ const navLinks = [
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { user, signOut } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,29 +56,12 @@ export const Navbar = () => {
 
           {/* Desktop Auth Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            {user ? (
-              <>
-                <span className="text-sm text-slate-600 px-3">
-                  {user.email}
-                </span>
-                <Button variant="navOutline" size="default" onClick={() => signOut()}>
-                  Sign Out
-                </Button>
-              </>
-            ) : (
-              <>
-                <Link to="/login">
-                  <Button variant="navOutline" size="default">
-                    Login
-                  </Button>
-                </Link>
-                <Link to="/signup">
-                  <Button variant="navPrimary" size="default">
-                    Sign Up
-                  </Button>
-                </Link>
-              </>
-            )}
+            <Button variant="navOutline" size="default" asChild>
+              <a href="#features">Explore</a>
+            </Button>
+            <Button variant="navPrimary" size="default" asChild>
+              <a href="#final-cta">Get Started</a>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -113,27 +93,16 @@ export const Navbar = () => {
                 </a>
               ))}
               <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-slate-200">
-                {user ? (
-                  <>
-                    <p className="text-sm text-slate-600 px-4 py-2">{user.email}</p>
-                    <Button variant="navOutline" size="lg" className="w-full" onClick={() => signOut()}>
-                      Sign Out
-                    </Button>
-                  </>
-                ) : (
-                  <>
-                    <Link to="/login" onClick={() => setIsMobileMenuOpen(false)}>
-                      <Button variant="navOutline" size="lg" className="w-full">
-                        Login
-                      </Button>
-                    </Link>
-                    <Link to="/signup" onClick={() => setIsMobileMenuOpen(false)}>
-                      <Button variant="navPrimary" size="lg" className="w-full">
-                        Sign Up
-                      </Button>
-                    </Link>
-                  </>
-                )}
+                <Button variant="navOutline" size="lg" className="w-full" asChild>
+                  <a href="#features" onClick={() => setIsMobileMenuOpen(false)}>
+                    Explore
+                  </a>
+                </Button>
+                <Button variant="navPrimary" size="lg" className="w-full" asChild>
+                  <a href="#final-cta" onClick={() => setIsMobileMenuOpen(false)}>
+                    Get Started
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
