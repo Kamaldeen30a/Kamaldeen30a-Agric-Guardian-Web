@@ -103,12 +103,6 @@ export const HeroSection = () => {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4"
             >
-              <Button variant="hero" size="xl" className="group w-full sm:w-auto" asChild>
-                <a href="#final-cta">
-                  Create Free Account
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </Button>
               <Button variant="heroOutline" size="xl" className="group w-full sm:w-auto" asChild>
                 <a href="#features">
                   <Play className="w-5 h-5" />
